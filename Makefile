@@ -1,17 +1,18 @@
 PACKAGE=lattice
 package: $(PACKAGE).zip
 
-$(PACKAGE).zip: lattice.pdf lattice.ins lattice.dtx README.md
+$(PACKAGE).zip: lattice-doc.pdf lattice.ins lattice.dtx README.md
 	mkdir $(PACKAGE)
 	cp -a $^ $(PACKAGE)
 	zip $@ $(PACKAGE)/*
 	rm -rf $(PACKAGE)
 
-all: lattice.pdf
+doc: lattice-doc.pdf
 
 
-%.pdf: %.dtx %.sty
+%-doc.pdf: %.dtx %.sty
 	pdflatex $<
+	mv $*.pdf $*-doc.pdf
 
 %.sty: %.ins
 	pdflatex $<
