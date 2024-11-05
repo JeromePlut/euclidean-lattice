@@ -1,13 +1,13 @@
-PACKAGE=lattice
+PACKAGE=euclidean-lattice
 package: $(PACKAGE).zip
 
-$(PACKAGE).zip: lattice-doc.pdf lattice.ins lattice.dtx README.md
-	mkdir $(PACKAGE)
-	cp -a $^ $(PACKAGE)
-	zip $@ $(PACKAGE)/*
-	rm -rf $(PACKAGE)
+%.zip: %-doc.pdf %.ins %.dtx README.md
+	mkdir $*
+	cp -a $^ $*
+	zip $@ $*/*
+	rm -rf $*
 
-doc: lattice-doc.pdf
+doc: $(PACKAGE)-doc.pdf
 
 
 %-doc.pdf: %.dtx %.sty

@@ -13,19 +13,20 @@
 %% 
 %% The Current Maintainer of this work is Jerome Plut.
 %% 
-%% This work consists of the files `lattice.ins` and `lattice.dtx`,
-%% as well as the derived file `lattice.sty`.
+%% This work consists of the files `euclidean-lattice.ins`
+%% and `euclidean-lattice.dtx`,
+%% as well as the derived file `euclidean-lattice.sty`.
 %% \fi
 
 % \iffalse
 %<*driver>
-\ProvidesFile{lattice.dtx}
+\ProvidesFile{euclidean-lattice.dtx}
 %</driver>
 %
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage{color}
-\usepackage{lattice}
+\usepackage{euclidean-lattice}
 \usepackage[listings]{tcolorbox}
 \tcbuselibrary{skins}
 \usepackage[margin=25mm]{geometry}
@@ -62,7 +63,7 @@
 \let\labelitemi\textendash
 
 \begin{document}
-  \DocInput{lattice.dtx}
+  \DocInput{euclidean-lattice.dtx}
   \PrintChanges
   \PrintIndex
 \end{document}
@@ -70,12 +71,12 @@
 %<*doc>
 \fi
 
-\GetFileInfo{lattice.sty}
+\GetFileInfo{euclidean-lattice.sty}
 
-\title{The \textsf{lattice} package}
+\title{The \textsf{euclidean-lattice} package}
 \author{J\'er\^ome Pl\^ut
 	\textlangle\texttt{jerome.plut@cyber.gouv.fr}\textrangle}
-\date{\textsf{lattice}~\fileversion, dated~\filedate}
+\date{\textsf{euclidean-lattice}~\fileversion, dated~\filedate}
 
 
 \maketitle
@@ -262,7 +263,7 @@ should ensure that all lattice points appear.
 % We obviously depend on~\textsf{tikz}
 % (and more precisely on~\textsf{pgfkeys}).
 %    \begin{macrocode}
-\ProvidesPackage{lattice}[2024-07-26 v1.0 Drawing lattices]
+\ProvidesPackage{euclidean-lattice}[2024-07-26 Drawing lattices]
 \RequirePackage{tikz}
 %    \end{macrocode}
 % We use fixed-point arithmetic in the 31-bit registers supported by
